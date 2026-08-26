@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid gray;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        th {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        td:first-child {
+            width: 30%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 190px;
+            height: 25px;
+            font-size: 15px;
+        }
+
+        textarea {
+            width: 265px;
+            height: 70px;
+            font-size: 15px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            font-size: 16px;
+            padding: 3px 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form>
+
+        <table>
+
+            <tr>
+                <th colspan="2">Registration Form</th>
+            </tr>
+
+            <tr>
+                <td>Full Name</td>
+                <td>
+                    <input type="text" name="fullname"
+                           placeholder="Enter your name">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="email"
+                           placeholder="abc@gmail.com">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone Number</td>
+                <td>
+                    <input type="tel" name="phone"
+                           placeholder="9876543210">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male">
+                    Male
+
+                    <input type="radio" name="gender" value="female">
+                    Female
+
+                    <input type="radio" name="gender" value="other">
+                    Other
+                </td>
+            </tr>
+
+            <tr>
+                <td>Skills</td>
+                <td>
+                    <input type="checkbox" name="skills" value="html">
+                    HTML
+
+                    <input type="checkbox" name="skills" value="css">
+                    CSS
+
+                    <input type="checkbox" name="skills" value="javascript">
+                    JavaScript
+                </td>
+            </tr>
+
+            <tr>
+                <td>Course</td>
+                <td>
+                    <select name="course">
+                        <option value="">--Select Course--</option>
+                        <option value="cse">Computer Science</option>
+                        <option value="it">Information Technology</option>
+                        <option value="ece">Electronics & Communication</option>
+                        <option value="me">Mechanical Engineering</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="address"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Upload Resume</td>
+                <td>
+                    <input type="file" name="resume">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Page</title>
+</head>
+<body>
+
+    <h2>Simple Form</h2>
+
+    <form action="result.html" target="resultFrame">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+
+    <iframe 
+        name="resultFrame"
+        src="result.html"
+        width="50%"
+        height="150"
+        title="Form Result">
+    </iframe>
+
+</body>
+</html>

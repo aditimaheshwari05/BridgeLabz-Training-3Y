@@ -1,0 +1,127 @@
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 40px;
+}
+
+/* Pricing Container */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    flex: 1;
+    min-height: 350px;
+    padding: 30px 20px;
+
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Fade-in animation */
+    animation: fadeIn 1s ease-in;
+}
+
+/* Middle highlighted card */
+.featured {
+    transform: scale(1.08);
+    background-color: #e8f4ff;
+    border: 2px solid #007bff;
+}
+
+/* Hover Effect */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading inside cards */
+.pricing-card h2 {
+    margin-bottom: 15px;
+}
+
+/* Price */
+.pricing-card h3 {
+    margin-bottom: 20px;
+}
+
+/* Features */
+.pricing-card ul {
+    list-style: none;
+    line-height: 2;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Button hover */
+.btn:hover {
+    background-color: #555;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stack vertically below 750px */
+@media (max-width: 750px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+
+    .pricing-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .featured {
+        transform: scale(1);
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+    }
+}

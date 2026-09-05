@@ -1,0 +1,150 @@
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Dashboard Grid */
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+
+    /* Sidebar + Main */
+    grid-template-columns: 220px 1fr;
+
+    /* Header + Content */
+    grid-template-rows: 80px 1fr;
+
+    gap: 15px;
+    background-color: #f2f2f2;
+    padding: 15px;
+}
+
+/* Header */
+header {
+    grid-column: 1 / 3;
+    background-color: #333;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+}
+
+/* Sidebar */
+aside {
+    background-color: #444;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+aside h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Vertical Navigation */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #666;
+}
+
+/* Main Content */
+main {
+    display: grid;
+
+    /* Two equal columns using fr */
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+/* Boxes */
+.box {
+    min-height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    /* Smooth hover effect */
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* One box spans two columns */
+.box5 {
+    grid-column: span 2;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    .dashboard {
+        grid-template-columns: 180px 1fr;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .box5 {
+        grid-column: span 1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        min-height: 80px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        width: 100%;
+    }
+}

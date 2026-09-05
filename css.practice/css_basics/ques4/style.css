@@ -1,0 +1,114 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5f7fa;
+    color: #222;
+    line-height: 1.8;
+}
+
+/* Header */
+header {
+    background-color: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+/* Subheading */
+.subheading {
+    background-color: #dbe7f3;
+    text-align: center;
+    padding: 15px;
+    color: #444;
+    font-size: 17px;
+}
+
+/* Article */
+.article {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+}
+
+/* Paragraph Styling */
+.article p {
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* First Letter */
+.article p::first-letter {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+/* First Line */
+.article p::first-line {
+    font-weight: bold;
+}
+
+/* Marked / Highlighted Words */
+mark {
+    background-color: #ffe066;
+    color: #222;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Blockquote */
+blockquote {
+    margin: 35px 0;
+    padding: 20px 25px;
+
+    background-color: #e8f1f8;
+    border-left: 6px solid #1e3a5f;
+
+    font-size: 20px;
+    font-style: italic;
+    color: #34495e;
+}
+
+/* Footer */
+footer {
+    background-color: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .article {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .article p {
+        font-size: 16px;
+    }
+
+    blockquote {
+        font-size: 17px;
+    }
+}

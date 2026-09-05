@@ -1,0 +1,168 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make footer stay at bottom */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fixed Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    background-color: #172554;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 5%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.5rem;       /* rem */
+}
+
+nav {
+    display: flex;
+    gap: 2em;                /* em */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding-top: 70px;       /* px */
+}
+
+/* Home Section */
+.hero {
+    min-height: 80vh;        /* vh */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 5%;
+    background-color: #dbeafe;
+}
+
+.bio {
+    width: 50%;              /* % */
+}
+
+.bio h2 {
+    font-size: 2.5rem;       /* rem */
+    margin-bottom: 20px;     /* px */
+    color: #172554;
+}
+
+.bio p {
+    font-size: 1.1em;        /* em */
+    line-height: 1.7;
+}
+
+/* Profile Image */
+.profile {
+    width: 250px;            /* px */
+    height: 250px;           /* px */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #172554;
+}
+
+/* About */
+.about,
+.contact {
+    padding: 60px 8%;        /* px and % */
+    text-align: center;
+}
+
+.about {
+    background-color: white;
+}
+
+.about h2,
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    color: #172554;
+}
+
+.about p,
+.contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Contact */
+.contact {
+    background-color: #bfdbfe;
+}
+
+/* Footer */
+footer {
+    background-color: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;            /* px */
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        padding: 0 3%;
+    }
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        gap: 0.8em;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .bio {
+        width: 90%;
+    }
+
+    .profile {
+        width: 180px;
+        height: 180px;
+    }
+}

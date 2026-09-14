@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Selectors</title>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Advanced CSS Selectors</h1>
+        <p>Understanding different types of CSS selectors</p>
+    </header>
+
+    <!-- Main content -->
+    <main>
+
+        <!-- Attribute Selectors Section -->
+        <section class="attribute-section">
+            <h2>Attribute Selectors</h2>
+
+            <form>
+                <!-- [type="text"] selector -->
+                <label>Name:</label>
+                <input type="text" placeholder="Enter your name">
+
+                <label>Email:</label>
+                <input type="email" placeholder="Enter your email">
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <p>
+                Visit our
+                <a href="https://www.example.com">Secure Website</a>
+            </p>
+
+            <p>
+                Visit our
+                <a href="http://www.example.com">Other Website</a>
+            </p>
+        </section>
+
+        <!-- Pseudo Classes Section -->
+        <section class="pseudo-section">
+            <h2>Pseudo-Classes</h2>
+
+            <ul class="item-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+
+            <input
+                type="text"
+                class="focus-input"
+                placeholder="Click here to see :focus"
+            >
+
+            <a href="#" class="hover-link">Hover over this link</a>
+        </section>
+
+        <!-- Combinators Section -->
+        <section class="combinator-section">
+            <h2>CSS Combinators</h2>
+
+            <div class="parent">
+                <p>Direct child paragraph</p>
+
+                <div class="nested">
+                    <p>Nested paragraph</p>
+                </div>
+
+                <p>Another paragraph</p>
+            </div>
+
+            <h3>Combinator Examples</h3>
+
+            <p class="sibling-one">First sibling</p>
+            <p class="sibling-two">Adjacent sibling</p>
+            <p class="sibling-three">General sibling</p>
+        </section>
+
+        <!-- Pseudo Elements Section -->
+        <section class="pseudo-element-section">
+            <h2 class="decorated-heading">Pseudo-Elements</h2>
+
+            <p class="decorated-text">
+                This paragraph demonstrates the use of
+                ::before and ::after.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Advanced CSS Selectors | HTML & CSS Practice</p>
+    </footer>
+
+</body>
+</html>

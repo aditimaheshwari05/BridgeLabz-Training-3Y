@@ -1,0 +1,211 @@
+/* BASIC RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.header h1 {
+    margin-bottom: 5px;
+}
+
+/*  MAIN CONTENT */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #ccc;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+/* 1. ATTRIBUTE SELECTORS */
+
+/* Attribute selector:
+   Selects all input elements whose type is exactly "text".
+*/
+input[type="text"] {
+    border: 2px solid #4a90e2;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Attribute selector:
+   Selects all links whose href starts with "https".
+*/
+a[href^="https"] {
+    color: green;
+    font-weight: bold;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 2. PSEUDO-CLASSES */
+
+/* :hover pseudo-class:
+   Applies styling when the mouse is placed over the link.
+*/
+.hover-link:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* :focus pseudo-class:
+   Applies styling when the input is selected/focused.
+*/
+.focus-input:focus {
+    outline: none;
+    border: 2px solid orange;
+    background-color: #fff8e1;
+}
+
+/* :nth-child() pseudo-class:
+   Selects the second item in the list.
+*/
+.item-list li:nth-child(2) {
+    background-color: #dceeff;
+    font-weight: bold;
+}
+
+/* Select every even item */
+.item-list li:nth-child(even) {
+    padding: 5px;
+}
+
+/*  3. PSEUDO-ELEMENTS */
+
+/* ::before pseudo-element:
+   Adds content before the heading.
+*/
+.decorated-heading::before {
+    content: "★ ";
+}
+
+/* ::after pseudo-element:
+   Adds content after the heading.
+*/
+.decorated-heading::after {
+    content: " ★";
+}
+
+/* Another ::before example */
+.decorated-text::before {
+    content: "“";
+    font-size: 30px;
+}
+
+/* Another ::after example */
+.decorated-text::after {
+    content: "”";
+    font-size: 30px;
+}
+
+/* 4. COMBINATORS*/
+
+/* DESCENDANT COMBINATOR (space)
+   Selects all <p> elements inside .parent,
+   even if they are deeply nested.
+*/
+.parent p {
+    color: #555;
+}
+
+/* CHILD COMBINATOR (>)
+   Selects only <p> elements that are direct children
+   of .parent.
+*/
+.parent > p {
+    color: blue;
+    font-weight: bold;
+}
+
+/* ADJACENT SIBLING COMBINATOR (+)
+   Selects the paragraph immediately following
+   .sibling-one.
+*/
+.sibling-one + .sibling-two {
+    color: green;
+    font-weight: bold;
+}
+
+/* GENERAL SIBLING COMBINATOR (~)
+   Selects all matching siblings that appear
+   after .sibling-one.
+*/
+.sibling-one ~ .sibling-three {
+    color: purple;
+    font-weight: bold;
+}
+
+/*FOOTER */
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+/* RESPONSIVE DESIGN*/
+
+@media (max-width: 600px) {
+
+    main {
+        width: 95%;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+}

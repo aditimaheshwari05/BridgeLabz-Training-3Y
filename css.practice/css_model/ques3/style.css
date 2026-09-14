@@ -1,0 +1,157 @@
+/* Remove default margin and apply box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+/* =========================
+   FIXED HEADER
+   ========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+
+    background-color: #222;
+    text-align: center;
+    padding: 15px;
+
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.header p {
+    font-size: 14px;
+}
+
+/* =========================
+   MAIN SECTIONS
+   ========================= */
+
+main {
+    padding-top: 90px;
+    padding-bottom: 70px;
+}
+
+/* Linear Gradient Section */
+.linear-section {
+    min-height: 70vh;
+
+    /* Linear gradient background */
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2,
+        #f093fb
+    );
+
+    /* Parallax-like effect */
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 50px;
+}
+
+/* Radial Gradient Section */
+.radial-section {
+    min-height: 70vh;
+
+    /* Radial gradient background */
+    background: radial-gradient(
+        circle,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 50px;
+}
+
+/* Content inside each section */
+.content {
+    max-width: 650px;
+
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 35px;
+    border-radius: 15px;
+}
+
+/* Section headings */
+.content h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* Section paragraphs */
+.content p {
+    font-size: 18px;
+}
+
+/* =========================
+   FIXED FOOTER
+   ========================= */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    background-color: #222;
+    text-align: center;
+    padding: 18px;
+
+    z-index: 1000;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .linear-section,
+    .radial-section {
+        padding: 30px 15px;
+    }
+}

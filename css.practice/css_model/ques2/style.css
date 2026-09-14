@@ -1,0 +1,117 @@
+/* Remove default spacing and make sizing easier */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+/*
+   Main section uses Flexbox.
+   align-items and justify-content center
+   center the boxes horizontally and vertically.
+*/
+main {
+    min-height: 75vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* Container for all three boxes */
+.box-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Common styling for all boxes */
+.box {
+    padding: 20px;
+    border: 4px solid #222;
+    text-align: center;
+
+    /* Prevent boxes from becoming too wide */
+    max-width: 350px;
+}
+
+/* Box 1
+   Uses px for width and height.
+*/
+.box-one {
+    width: 250px;
+    height: 180px;
+
+    background-color: #ffcccc;
+}
+
+/* Box 2
+   Uses percentage for width
+   and em for height.
+*/
+.box-two {
+    width: 40%;
+    height: 15em;
+
+    background-color: #cce5ff;
+
+    /* Minimum height demonstration */
+    min-height: 200px;
+}
+
+/* Box 3
+   Uses vh for height
+   and px for width.
+*/
+.box-three {
+    width: 300px;
+    height: 30vh;
+
+    background-color: #ccffcc;
+
+    /*
+       Controls content that exceeds
+       the fixed height of the box.
+    */
+    overflow: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+
+    .box-container {
+        flex-direction: column;
+    }
+
+    .box-two {
+        width: 80%;
+    }
+}

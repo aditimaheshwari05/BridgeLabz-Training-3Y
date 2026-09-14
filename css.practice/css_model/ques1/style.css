@@ -1,0 +1,172 @@
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Main section */
+main {
+    padding: 40px;
+}
+
+/* 
+   Flexbox is used to align
+   the boxes horizontally.
+*/
+.box-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Common box styling */
+.box {
+    width: 220px;
+    min-height: 150px;
+    background-color: white;
+    text-align: center;
+
+    /* Internal spacing */
+    padding: 25px;
+
+    /* Smooth border transition */
+    transition: border-color 0.3s ease;
+}
+
+/* Different border styles */
+.solid-box {
+    border: 5px solid #333;
+}
+
+.dashed-box {
+    border: 5px dashed #333;
+}
+
+.double-box {
+    border: 8px double #333;
+}
+
+.groove-box {
+    border: 8px groove #333;
+}
+
+/* Hover effect for all boxes */
+.box:hover {
+    border-color: #e67e22;
+}
+
+/* Padding section */
+.padding-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.padding-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.padding-box {
+    background-color: white;
+    border: 3px solid #555;
+    width: 220px;
+}
+
+/* Different padding values */
+.padding-small {
+    padding: 10px;
+}
+
+.padding-medium {
+    padding: 25px;
+}
+
+.padding-large {
+    padding: 40px;
+}
+
+/* Rounded corners section */
+.rounded-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.rounded-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.rounded-box {
+    width: 220px;
+    padding: 25px;
+    background-color: white;
+    border: 4px solid #555;
+
+    /* Smooth hover transition */
+    transition: border-color 0.3s ease;
+}
+
+/* Different border-radius values */
+.radius-small {
+    border-radius: 10px;
+}
+
+.radius-medium {
+    border-radius: 25px;
+}
+
+.radius-large {
+    border-radius: 50px;
+}
+
+/* Hover effect for rounded boxes */
+.rounded-box:hover {
+    border-color: #e67e22;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    main {
+        padding: 20px;
+    }
+
+    .box-container,
+    .padding-container,
+    .rounded-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

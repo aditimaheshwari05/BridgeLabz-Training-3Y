@@ -1,0 +1,156 @@
+/*BASIC RESET*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.header h1 {
+    font-size: 32px;
+
+    /* Text shadow for depth */
+    text-shadow: 3px 3px 5px #000;
+}
+
+.header p {
+    margin-top: 8px;
+}
+
+/*MAIN SECTION*/
+
+.cards-section {
+    min-height: 75vh;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.cards-section > h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+
+    /* Text shadow for depth */
+    text-shadow: 2px 2px 4px #aaa;
+}
+
+/* FLEXBOX CARD CONTAINER*/
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+
+    /* Keeps cards in a single row */
+    flex-wrap: nowrap;
+}
+
+/* COMMON CARD STYLING */
+
+.card {
+    width: 280px;
+    min-height: 330px;
+
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+
+    /* Smooth hover animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DIFFERENT BOX SHADOWS */
+
+/* Card 1 - Soft shadow */
+.card-one {
+    box-shadow: 5px 5px 15px #aaa;
+}
+
+/* Card 2 - Strong shadow */
+.card-two {
+    box-shadow: 0 8px 20px #888;
+}
+
+/* Card 3 - Multiple shadow effect */
+.card-three {
+    box-shadow:
+        5px 5px 10px #bbb,
+        -5px -5px 10px #ddd;
+}
+
+/*HOVER EFFECT */
+
+/* Card lifts upward with a larger shadow */
+.card:hover {
+    transform: translateY(-12px);
+
+    box-shadow: 0 18px 30px #777;
+}
+
+/* PROFILE ICON */
+
+.profile-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+/* Card headings */
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+
+    /* Text shadow */
+    text-shadow: 2px 2px 3px #ccc;
+}
+
+/* Card paragraph */
+.card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Profile role */
+.card span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*FOOTER */
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+/* RESPONSIVE DESIGN*/
+
+@media (max-width: 950px) {
+
+    .card-container {
+        flex-wrap: wrap;
+    }
+}

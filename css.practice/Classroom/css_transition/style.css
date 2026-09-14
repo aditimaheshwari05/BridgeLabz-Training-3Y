@@ -1,0 +1,22 @@
+.box{
+    height:100px;
+    width:100px;
+    background-color: black;
+    transition
+}
+
+/*.box.hover{
+    transform:translatex(200px);
+    transform: rotate;
+    transform: scale;
+    transform: translatex(200px) rotate(180deg) scale(1.5);
+}*/
+
+@keyframes move{
+    0%{
+        transform:translatex(0px);
+    }
+    100%{
+        transform: translatex(200px);
+    }
+}

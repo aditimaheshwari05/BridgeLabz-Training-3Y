@@ -1,0 +1,166 @@
+
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* Main section */
+main {
+    padding: 40px 20px;
+}
+
+/* Flexbox to arrange all examples in one row */
+.examples {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual example boxes */
+.example-box {
+    background-color: white;
+    width: 250px;
+    min-height: 250px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.example-box h2 {
+    margin-bottom: 15px;
+}
+
+/* ----------------------------- */
+/* :hover pseudo-class */
+/* ----------------------------- */
+
+.example-box a {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+}
+
+/* Link changes when mouse is placed over it */
+.example-box a:hover {
+    color: white;
+    background-color: #0066cc;
+    border-radius: 5px;
+}
+
+
+/* ----------------------------- */
+/* :focus pseudo-class */
+/* ----------------------------- */
+
+.example-box button {
+    padding: 10px 15px;
+    border: 2px solid #555;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Button changes when it receives focus */
+.example-box button:focus {
+    outline: none;
+    border-color: #0066cc;
+    background-color: #cce5ff;
+}
+
+
+/* ----------------------------- */
+/* :active pseudo-class */
+/* ----------------------------- */
+
+/* Button changes while it is being pressed */
+.active-button:active {
+    background-color: #333;
+    color: white;
+    transform: scale(0.95);
+}
+
+
+/* ----------------------------- */
+/* :nth-child() pseudo-class */
+/* ----------------------------- */
+
+.example-box ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.example-box li {
+    padding: 7px;
+    margin: 4px 0;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+/* Change the background of every even list item */
+.example-box li:nth-child(even) {
+    background-color: #bde0fe;
+}
+
+/* Change the background of every odd list item */
+.example-box li:nth-child(odd) {
+    background-color: #d8f3dc;
+}
+
+
+/* Description text */
+.example-box p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+
+/* Responsive design */
+@media (max-width: 800px) {
+    .examples {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .example-box {
+        width: 90%;
+        max-width: 400px;
+    }
+}

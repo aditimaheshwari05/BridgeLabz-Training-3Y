@@ -1,0 +1,145 @@
+
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    min-height: 100vh;
+
+    /* Center content using Flexbox */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* Main section */
+main {
+    flex: 1;
+
+    /* Center all examples using Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Container for all tooltip examples */
+.tooltip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Individual tooltip box */
+.tooltip-box {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Icons and words */
+.icon,
+.word {
+    padding: 20px;
+    font-size: 35px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.word {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* ----------------------------- */
+/* Tooltip styling */
+/* ----------------------------- */
+
+.tooltip-text {
+    position: absolute;
+
+    /* Position tooltip above the element */
+    bottom: 120%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: #333;
+    color: white;
+
+    padding: 8px 12px;
+    border-radius: 5px;
+
+    white-space: nowrap;
+
+    /* Hide tooltip initially */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Smooth fade-in effect */
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Small arrow below the tooltip */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+
+/* Show tooltip when hovering */
+.tooltip-box:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .tooltip-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+}

@@ -1,0 +1,224 @@
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+
+/* Main section */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+
+/* Button section */
+.button-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-section h2 {
+    margin-bottom: 25px;
+}
+
+
+/* Use Flexbox to align buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Common styling for all buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+
+    /* Smooth transition for hover and active effects */
+    transition: all 0.3s ease;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ----------------------------- */
+/* Primary button */
+/* ----------------------------- */
+
+.primary {
+    background-color: #0066cc;
+    color: white;
+    border: 2px solid #0066cc;
+}
+
+
+/* Primary hover effect */
+.primary:hover {
+    background-color: #004c99;
+    transform: translateY(-3px);
+}
+
+
+/* Primary active effect */
+.primary:active {
+    transform: translateY(1px);
+}
+
+
+/* ----------------------------- */
+/* Secondary button */
+/* ----------------------------- */
+
+.secondary {
+    background-color: #555;
+    color: white;
+    border: 2px solid #555;
+}
+
+
+/* Secondary hover effect */
+.secondary:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+
+/* Secondary active effect */
+.secondary:active {
+    transform: translateY(1px);
+}
+
+
+/* ----------------------------- */
+/* Outline button */
+/* ----------------------------- */
+
+.outline {
+    background-color: transparent;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+}
+
+
+/* Outline hover effect */
+.outline:hover {
+    background-color: #0066cc;
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* Outline active effect */
+.outline:active {
+    transform: translateY(1px);
+}
+
+
+/* ----------------------------- */
+/* Focus pseudo-class */
+/* ----------------------------- */
+
+/* Shows a clear outline when button receives focus */
+.btn:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 3px;
+}
+
+
+/* ----------------------------- */
+/* Disabled button */
+/* ----------------------------- */
+
+.disabled {
+    background-color: #ccc;
+    color: #777;
+    border: 2px solid #bbb;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* :disabled pseudo-class */
+.btn:disabled {
+    opacity: 0.7;
+}
+
+
+/* Prevent hover effect on disabled button */
+.btn:disabled:hover {
+    transform: none;
+}
+
+
+/* Information text */
+.info {
+    margin-top: 25px;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .button-section {
+        width: 95%;
+        padding: 30px 15px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 220px;
+    }
+}
+

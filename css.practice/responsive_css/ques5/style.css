@@ -1,0 +1,177 @@
+
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+}
+
+/* Header styling */
+.header {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #222;
+    color: white;
+}
+
+.header h1 {
+    margin-bottom: 8px;
+}
+
+/* Main content */
+main {
+    flex: 1;
+}
+
+/* Team section */
+.team-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Profile cards arranged using Flexbox */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Individual profile card */
+.profile-card {
+    flex: 1;
+    max-width: 350px;
+
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Fade-in animation when page loads */
+    animation: fadeIn 1s ease-in-out;
+
+    /* Smooth hover transition */
+    transition: transform 0.3s ease;
+}
+
+/* Different animation delay for each card */
+.profile-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.profile-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.profile-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Profile images */
+.profile-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    /* Smooth filter transition */
+    transition: filter 0.4s ease;
+}
+
+/* Grayscale filter */
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* Sepia filter */
+.sepia {
+    filter: sepia(100%);
+}
+
+/* Hover effect:
+   Remove image filter and lift the card */
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+.profile-card:hover img {
+    filter: none;
+}
+
+/* Card content */
+.card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+}
+
+.card-content h4 {
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+/* Fade-in keyframe animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+/* Stack cards vertically below 800px */
+@media (max-width: 799px) {
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* Additional adjustment for small mobile screens */
+@media (max-width: 500px) {
+
+    .team-section {
+        padding: 35px 20px;
+    }
+
+    .profile-card img {
+        height: 220px;
+    }
+}

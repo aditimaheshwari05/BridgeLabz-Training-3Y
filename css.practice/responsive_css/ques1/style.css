@@ -1,0 +1,125 @@
+
+/* Remove default spacing and set box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+/* Main section */
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Image gallery using CSS Grid */
+.gallery {
+    display: grid;
+
+    /* Required responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 25px;
+}
+
+/* Individual gallery item */
+.gallery-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    /* Smooth filter transition */
+    transition: filter 0.5s ease;
+}
+
+/* Different filters for each image */
+.blur {
+    filter: blur(3px);
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.sepia {
+    filter: sepia(100%);
+}
+
+.brightness {
+    filter: brightness(150%);
+}
+
+.contrast {
+    filter: contrast(180%);
+}
+
+.hue-rotate {
+    filter: hue-rotate(120deg);
+}
+
+/* Remove filter when hovering */
+.gallery-item img:hover {
+    filter: none;
+}
+
+/* Caption styling */
+.gallery-item figcaption {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Stack all images into one column below 600px */
+@media (max-width: 599px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 280px;
+    }
+}

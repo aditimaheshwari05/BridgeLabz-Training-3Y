@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        input {
+            display: block;
+            width: 300px;
+            padding: 8px;
+            margin: 5px 0;
+            border: 2px solid #ccc;
+        }
+
+        .valid {
+            border-color: green;
+        }
+
+        .invalid {
+            border-color: red;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form id="studentForm">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+        <div id="nameError" class="error"></div>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <div id="emailError" class="error"></div>
+
+        <label>Phone:</label>
+        <input type="text" id="phone">
+        <div id="phoneError" class="error"></div>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <div id="passwordError" class="error"></div>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <script>
+        "use strict";
+
+        const form = document.getElementById("studentForm");
+
+        const namePattern = /^[A-Za-z]+$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^\d{10}$/;
+        const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/;
+
+        function validateField(input, errorElement, pattern, errorMessage) {
+            if (pattern.test(input.value)) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                errorElement.textContent = "";
+                return true;
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                errorElement.textContent = errorMessage;
+                return false;
+            }
+        }
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nameValid = validateField(
+                document.getElementById("name"),
+                document.getElementById("nameError"),
+                namePattern,
+                "Name must contain only alphabets."
+            );
+
+            const emailValid = validateField(
+                document.getElementById("email"),
+                document.getElementById("emailError"),
+                emailPattern,
+                "Enter a valid email address."
+            );
+
+            const phoneValid = validateField(
+                document.getElementById("phone"),
+                document.getElementById("phoneError"),
+                phonePattern,
+                "Phone number must contain exactly 10 digits."
+            );
+
+            const passwordValid = validateField(
+                document.getElementById("password"),
+                document.getElementById("passwordError"),
+                passwordPattern,
+                "Password must contain 1 uppercase letter, 1 number, and 1 special character."
+            );
+
+            if (nameValid && emailValid && phoneValid && passwordValid) {
+                console.log("Registration successful!");
+            } else {
+                console.log("Please correct the invalid fields.");
+            }
+        });
+    </script>
+
+</body>
+</html>

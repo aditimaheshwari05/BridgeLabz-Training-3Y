@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        form {
+            width: 350px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .valid {
+            border: 2px solid green;
+        }
+
+        .invalid {
+            border: 2px solid red;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 15px;
+        }
+
+        #ticket {
+            margin-top: 25px;
+            padding: 15px;
+            border: 2px solid green;
+            width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Movie Ticket Booking</h2>
+
+    <form id="bookingForm">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <div id="nameError" class="error"></div>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <div id="emailError" class="error"></div>
+
+        <label for="seats">Number of Seats:</label>
+        <input type="number" id="seats" min="1" max="10">
+        <div id="seatsError" class="error"></div>
+
+        <button type="submit">Book Ticket</button>
+
+    </form>
+
+    <div id="ticket"></div>
+
+    <script>
+        "use strict";
+
+        const bookingForm = document.getElementById("bookingForm");
+
+        const namePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        bookingForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const seats = Number(document.getElementById("seats").value);
+
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const seatsError = document.getElementById("seatsError");
+
+            let isValid = true;
+
+            if (!namePattern.test(name)) {
+                nameError.textContent = "Name must contain alphabets only.";
+                document.getElementById("name").className = "invalid";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+                document.getElementById("name").className = "valid";
+            }
+
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Enter a valid email address.";
+                document.getElementById("email").className = "invalid";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+                document.getElementById("email").className = "valid";
+            }
+
+            if (!Number.isInteger(seats) || seats < 1 || seats > 10) {
+                seatsError.textContent = "Seats must be between 1 and 10.";
+                document.getElementById("seats").className = "invalid";
+                isValid = false;
+            } else {
+                seatsError.textContent = "";
+                document.getElementById("seats").className = "valid";
+            }
+
+            if (isValid) {
+                const booking = {
+                    name: name,
+                    email: email,
+                    seats: seats
+                };
+
+                console.log("Booking Information:", booking);
+
+                document.getElementById("ticket").innerHTML = `
+                    <h3>🎬 Ticket Booking Successful</h3>
+                    <p><strong>Name:</strong> ${booking.name}</p>
+                    <p><strong>Email:</strong> ${booking.email}</p>
+                    <p><strong>Seats:</strong> ${booking.seats}</p>
+                    <p><strong>Status:</strong> Confirmed</p>
+                `;
+            } else {
+                document.getElementById("ticket").innerHTML = "";
+            }
+        });
+    </script>
+
+</body>
+</html>

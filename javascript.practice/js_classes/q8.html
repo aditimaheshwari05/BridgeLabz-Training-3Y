@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Object Updater</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        form {
+            width: 350px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 15px;
+        }
+
+        #userDetails {
+            margin-top: 25px;
+            padding: 15px;
+            border: 2px solid green;
+            width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Dynamic User Object Updater</h2>
+
+    <form id="userForm">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age">
+
+        <button type="submit">Update User</button>
+
+    </form>
+
+    <div id="userDetails"></div>
+
+    <script>
+        "use strict";
+
+        
+        const user = {
+            name: "John",
+            email: "john@mail.com",
+            age: 21
+        };
+
+        const userForm = document.getElementById("userForm");
+        const userDetails = document.getElementById("userDetails");
+
+        
+        function displayUser() {
+            userDetails.innerHTML = `
+                <h3>Updated User Details</h3>
+                <p><strong>Name:</strong> ${user.name}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Age:</strong> ${user.age}</p>
+            `;
+
+            console.log("Updated User Object:", user);
+        }
+
+        
+        document.getElementById("name").value = user.name;
+        document.getElementById("email").value = user.email;
+        document.getElementById("age").value = user.age;
+
+        
+        userForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            user.name = document.getElementById("name").value;
+            user.email = document.getElementById("email").value;
+            user.age = Number(document.getElementById("age").value);
+
+            
+            displayUser();
+        });
+
+        
+        displayUser();
+    </script>
+
+</body>
+</html>

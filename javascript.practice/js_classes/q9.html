@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+
+    <h2>Shopping Cart</h2>
+
+    <div id="cartDetails"></div>
+
+    <script>
+        "use strict";
+
+        class Cart {
+            constructor() {
+                this.items = [];
+            }
+
+            addItem(name, price, quantity) {
+                this.items.push({
+                    name: name,
+                    price: price,
+                    quantity: quantity
+                });
+            }
+
+            getTotal() {
+                return this.items.reduce(
+                    (total, item) => total + (item.price * item.quantity),
+                    0
+                );
+            }
+
+            applyCoupon(coupon) {
+                const couponPattern = /^(SAVE|DISC)(\d{2})$/;
+
+                const match = coupon.match(couponPattern);
+
+                if (!match) {
+                    console.log("Invalid coupon format.");
+                    return this.getTotal();
+                }
+
+                const discountPercent = Number(match[2]);
+                const total = this.getTotal();
+
+                
+                if (discountPercent <= 0 || discountPercent >= 100) {
+                    console.log("Invalid discount percentage.");
+                    return total;
+                }
+
+                const discountAmount = total * (discountPercent / 100);
+                const finalTotal = total - discountAmount;
+
+                console.log(`Coupon Applied: ${coupon}`);
+                console.log(`Discount: ${discountPercent}%`);
+                console.log(`Discount Amount: ₹${discountAmount.toFixed(2)}`);
+
+                return finalTotal;
+            }
+
+            displayCart() {
+                const cartDetails = document.getElementById("cartDetails");
+
+                let output = "<h3>Cart Items</h3>";
+
+                this.items.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+
+                    output += `
+                        <p>
+                            ${item.name} -
+                            ₹${item.price} × ${item.quantity}
+                            = ₹${itemTotal.toFixed(2)}
+                        </p>
+                    `;
+                });
+
+                cartDetails.innerHTML = output;
+            }
+        }
+
+        const cart = new Cart();
+
+        cart.addItem("Laptop", 50000, 1);
+        cart.addItem("Headphones", 2000, 2);
+        cart.addItem("Mouse", 1000, 1);
+        cart.displayCart();
+
+        const originalTotal = cart.getTotal();
+        const coupon = "SAVE20";
+        const finalTotal = cart.applyCoupon(coupon);
+
+        
+        document.getElementById("cartDetails").innerHTML += `
+            <hr>
+            <p><strong>Original Total:</strong> ₹${originalTotal.toFixed(2)}</p>
+            <p><strong>Coupon:</strong> ${coupon}</p>
+            <p><strong>Final Total:</strong> ₹${finalTotal.toFixed(2)}</p>
+        `;
+
+        console.log(`Original Total: ₹${originalTotal.toFixed(2)}`);
+        console.log(`Final Total: ₹${finalTotal.toFixed(2)}`);
+    </script>
+
+</body>
+</html>

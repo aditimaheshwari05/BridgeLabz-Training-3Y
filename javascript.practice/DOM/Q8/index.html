@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Dropdown</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+
+        #dropdown {
+            position: relative;
+            width: 200px;
+        }
+
+        #dropdownButton {
+            width: 200px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #options {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: white;
+            border: 1px solid black;
+        }
+
+        .option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background: lightgray;
+        }
+
+        #options.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Custom Dropdown</h2>
+
+    <div id="dropdown">
+        <button id="dropdownButton">Select an option</button>
+
+        <div id="options">
+            <div class="option">JavaScript</div>
+            <div class="option">Python</div>
+            <div class="option">Java</div>
+            <div class="option">C++</div>
+        </div>
+    </div>
+
+    <script src="question8.js" defer></script>
+</body>
+</html>

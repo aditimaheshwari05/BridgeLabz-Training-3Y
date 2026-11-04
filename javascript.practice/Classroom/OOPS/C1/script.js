@@ -2,6 +2,7 @@ class Student{
     static uName="GLA";
     #studentid=101;
     #studentName="Aditi";
+
 }
 
 getDetails()

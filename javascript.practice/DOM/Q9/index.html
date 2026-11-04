@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+
+        input {
+            display: block;
+            padding: 8px;
+            margin: 8px 0;
+            width: 250px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        #success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <span class="error" id="nameError"></span>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+
+        <span class="error" id="emailError"></span>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+
+        <span class="error" id="passwordError"></span>
+
+        <br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <h3 id="success"></h3>
+
+    <script src="question9.js" defer></script>
+</body>
+</html>
